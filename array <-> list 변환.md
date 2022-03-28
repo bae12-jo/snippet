@@ -25,8 +25,10 @@ arr[0]="D";
 list.set(0, "D");
 ```
 
+
 String 리스트를 String 배열로
 * `toArray` 사용
+* toArray(T[] a)는 파라미터로 넘어온 배열의 크기를 확인하고 리스트 크기보다 작을 때 List 크기를 기준으로 배열을 생성한다. 인자로 넘어가는 배열의 크기가 리스트의 크기보다 큰 경우에는 인자로 넘어가는 배열의 크기만큼 배열이 생성된다. 실수로 큰 값을 전달하면 배열의 크기가 커진다.
 ```java
-String arr[] = arrList.toArray(new String[arrList.size()]);
+String arr[] = arrList.toArray(new String[arrList.size()]); // new String[0]으로 해도 리스트 크기와 동일한 배열이 만들어진다.
 ```
