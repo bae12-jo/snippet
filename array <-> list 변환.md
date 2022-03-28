@@ -14,3 +14,19 @@ List<Integer> intList = Arrays.stream(arr)
                               .boxed()
                               .collect(Collectors.toList());
 ```
+
+String 배열을 String 리스트로
+* `asList` 사용
+```java
+String[] arr = {"A", "B", "C"};
+List<String> list = Arrays.asList(arr); // 이렇게 하면 고정 길이의 list를 반환하므로 값 추가가 안 됨
+List<String> list = new ArrayList<>(Arrays.asList(arr)); // Arrays.asList()로 변환한 List로 새로운 ArrayList 객체를 생성해서 사용 가능
+arr[0]="D";
+list.set(0, "D");
+```
+
+String 리스트를 String 배열로
+* `toArray` 사용
+```java
+String arr[] = arrList.toArray(new String[arrList.size()]);
+```
